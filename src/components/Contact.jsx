@@ -22,9 +22,13 @@ const Contact = () => {
     }
     const { name, value } = e.target
     {
-      /*[name]为动态变量名，即3个input中对应的name。 value为input输入框的e.target.value,所以[name]:value 表示将当前点击的name输入框对应的的value赋值给form表单中对应的属性  此处仍有疑问。仍需搞清楚*/
+      /*[name]为动态变量名，即3个input中对应的name。 value为input输入框的e.target.value,所以[name]:value 理解为 第一个input框就表示为 e.current.name=name=e.current.target.value, 所以成功把当前value赋值给form里对应的属性.
+      第二个input就表示为 e.current.name =email= e.current.value  此处仍有疑问。仍需搞清楚*/
     }
     setForm({ ...form, [name]: value })
+    console.log(form.email)
+    console.log(form.name)
+    console.log(form.message)
     console.log(form)
   }
 

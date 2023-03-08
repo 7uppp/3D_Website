@@ -48,7 +48,7 @@ const BallCanvas = ({ icon }) => {
           enableZoom={false}
           makeDefault
           autoRotate
-          autoRotateSpeed={2}
+          autoRotateSpeed={1}
         />
         <Ball imgUrl={icon} />
       </Suspense>
