@@ -17,11 +17,15 @@ const Contact = () => {
   const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
+    {
+      /*解构出name=e.target.name 和value=e.target.value  */
+    }
     const { name, value } = e.target
     {
-      /*[name]:value 表示将 初始化的form中的name更新成当前e.target拿到的value的值*/
+      /*[name]为动态变量名，即3个input中对应的name。 value为input输入框的e.target.value,所以[name]:value 表示将当前点击的name输入框对应的的value赋值给form表单中对应的属性*/
     }
     setForm({ ...form, [name]: value })
+    console.log(form)
   }
 
   const handleSubmit = (e) => {
@@ -29,7 +33,7 @@ const Contact = () => {
     setLoading(true)
     emailjs
       .send(
-        'serivce id from emailjs',
+        'service id from emailjs',
         'template id from emailjs',
         {
           from_name: form.name,
